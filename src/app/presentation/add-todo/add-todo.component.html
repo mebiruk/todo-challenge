@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h2>Add New Task</h2>
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+        <input type="hidden" id="id" class="form-control" formControlName="id">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" class="form-control" formControlName="title" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" class="form-control" formControlName="description"></textarea>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="isDone" formControlName="isDone">
+            <label class="form-check-label" for="isDone">Completed</label>
+        </div>
+        <div class="d-flex justify-content-end m-4">
+            <button type="submit" id="submit_button" class="btn btn-primary m-3">Add</button>
+            <button type="button" id="cancel_button" class="btn btn-secondary m-3" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>
